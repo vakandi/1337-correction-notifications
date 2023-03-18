@@ -32,13 +32,18 @@ python3 corrections-bot.py
 </br>
 
 
-### To make the script run every 15 minutes to check your corrections, add the a crontab (works on termux too)
+### To make the script run every 15 minutes to check your corrections, add the a crontab (works on termux too
+(you should fork it to keep your own config)
 ```bash
 crontab -e
 ```
 (adjust folder paths as necessary)
 ```bash
 */15 * * * * cd /home/ubuntu/corrections; /usr/bin/python3 corrections-bot.py >> execution.log 2>&1
+```
+Or if you want to use your phone with Termux : 
+```bash
+*/15 * * * * cd ; cd {your git fork repo}; python3 corrections-bot.py >> execution.log 2>&1
 ```
 </br>
 
