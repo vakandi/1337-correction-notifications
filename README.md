@@ -40,10 +40,13 @@ crontab -e
 (adjust folder paths as necessary)
 ```bash
 */15 * * * * cd /home/ubuntu/corrections; /usr/bin/python3 corrections-bot.py >> execution.log 2>&1
+*/15 * * * * cd /home/ubuntu/corrections; sh check.sh
+
 ```
 Or if you want to use your phone with Termux : 
 ```bash
 */15 * * * * cd ; cd {your git fork repo}; python3 corrections-bot.py >> execution.log 2>&1
+*/15 * * * * cd ; cd {your git fork repo}; sh check.sh
 ```
 </br>
 
