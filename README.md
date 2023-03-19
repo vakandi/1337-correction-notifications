@@ -41,14 +41,16 @@ crontab -e
 ```bash
 */15 * * * * cd /home/ubuntu/corrections; /usr/bin/python3 corrections-bot.py >> execution.log 2>&1
 */15 * * * * cd /home/ubuntu/corrections; sh check.sh
-
+0 0 * * * cd /home/ubuntu/corrections; rm corrector.tmp
 ```
 Or if you want to use your phone with Termux : 
 ```bash
 */15 * * * * cd ; cd {your git fork repo}; python3 corrections-bot.py >> execution.log 2>&1
 */15 * * * * cd ; cd {your git fork repo}; sh check.sh
+0 0 * * * cd ; cd {your git fork repo}; rm corrector.tmp
 ```
 </br>
+(the rm crontab job is to clean the corrector everyday so it doesn't block the notification if you have another corrector with the same person)
 
 
 #### No API key required
